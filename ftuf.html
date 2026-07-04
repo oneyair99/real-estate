@@ -1,0 +1,126 @@
+מכיוון שביקשת "קובץ טקסט אחד ב-HTML", אני מניח שאתה זקוק לקובץ הבסיס (Boilerplate) הריק והמושלם שישמש כנקודת התחלה לכל אתר אינטרנט.
+
+זהו הקוד המלא של קובץ `index.html` יחיד, שנראה ופועל כמו דף אינטרנט מקומי.
+
+---
+
+### 📜 `index.html` (הקובץ האחד)
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <!-- הגדרת הקידוד של המסמך ל-UTF-8 כדי לתמוך בעברית ובהצגה תקינה -->
+    <meta charset="UTF-8">
+    <!-- אופטימיזציה למנועי חיפוש ומכשירים ניידים -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- תגית Title: זהו הכותרת שמופיעה בלשונית הדפדפן -->
+    <title>מערכת מציאת נכסים למשקיעים - InvestProp Finder</title>
+
+    <!-- CSS Styling (סטיילינג) -->
+    <style>
+        /* איפוס סגנונות בסיסיים לקובץ */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9; /* רקע בהיר ונעים לעין */
+            color: #333;
+        }
+
+        header {
+            background-color: #1e3a8a; /* כחול כהה - צבע מקצועי */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* סגנון עבור אזור התוכן הראשי */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* סגנון כותרות המשנה והפסקאות */
+        h2 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #d1d5db;
+            padding-bottom: 10px;
+        }
+        
+        /* סגנון עבור כפתורים או אזורי קלט */
+        .button {
+            display: inline-block;
+            background-color: #3b82f6; /* כחול בהיר יותר */
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        /* אפקט מעבר קל במעבר העכבר */
+        .button:hover {
+            background-color: #2563eb;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- כותרת האתר (Header) -->
+    <header>
+        <h1>🏡 InvestProp Finder - מציאת נכסי השקעה</h1>
+        <p>הכלים המקיפים למצאירי עסקאות בניתוח שוק הנדל"ן.</p>
+    </header>
+
+    <!-- אזור התוכן העיקרי של הדף -->
+    <div class="container">
+        
+        <h2>🔍 הקליטראיות והחיפוש</h2>
+        <p>הזן פרמטרים מוגדרים כדי לצמצם את החיפושים לאזור הגיאוגרפי המבוקש ולטווח מחירים הרצוי.</p>
+        
+        <!-- דמוניסטרציה של קופסת חיפוש (Form) -->
+        <form action="/search" method="GET">
+            <label for="location">מיקום:</label>
+            <input type="text" id="location" name="location" placeholder="עיר, מדינה או מיקוד..." required style="padding: 8px; margin-left: 10px;">
+
+            <label for="minPrice">טווח מחירים (מינימום):</label>
+             <!-- קלט עם ערך ברירת מחדל -->
+            <input type="number" id="minPrice" name="min_price" placeholder="₪50,000" style="padding: 8px;">
+
+            <!-- כפתור שליחה -->
+            <button type="submit" class="button">חפש נכסים</button>
+        </form>
+
+
+        <hr style="margin: 40px 0; border-color: #ccc;">
+
+        <h2>📈 מאפייני ההשקעה שלנו</h2>
+        <p>אנו מתמקדים בנכסים הדורשים שיפוץ, ומציעים רק אלה עם פוטנציאל גבוה ודירוג השקעה משופר.</p>
+        
+        <!-- פסקה מודגשת - תיאור המותג -->
+        <div style="background-color: #e0f2fe; padding: 20px; border-radius: 8px; margin-top: 20px;">
+            <strong>מדוע להשתמש בנו?</strong> אנחנו מסננים עבורך את הרעש בשוק, ומציגים רק נכסים עם הערכת שווי מקצועית ואחוז פוטנציאל משקלי ברור.
+        </div>
+
+        <h2>📜 תיאור מפורט של הקונספט</h2>
+        <p>האתר נועד לסייע למשקיעי נדל"ן המחפשים יתרון על ידי התמקדות במקרים שבהם הנכסים נמצאים מתחת למחירי השוק, אך עדיין מחזיקים בשווי פוטנציאלי גבוה לאחר הקלות הנדרשות. זהו גשר בין המציאה לבין ההשקעה המבוססת.</p>
+
+    </div> <!-- סוף .container -->
+
+
+    <!-- קטע התחתית (Footer) - פרטי יצירה וקשרים -->
+    <footer>
+        <div class="container" style="text-align: center; padding: 20px; border-top: 1px solid #ccc; margin-top: 40px;">
+            &copy; 2024 InvestProp Finder. כל הזכויות שמורות. | <a href="#" style="color: #3b82f6;">צור קשר</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
