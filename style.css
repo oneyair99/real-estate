@@ -1,0 +1,420 @@
+/* רקע תמונה מלאה לכל האתר */
+body {
+    font-family: "Assistant", Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+
+    /* תמונת הרקע שלך */
+    background-image: url("images/ba.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    /* שכבת כהות אלגנטית מעל התמונה */
+    position: relative;
+    color: #fff;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 10, 30, 0.55); /* כהות עדינה */
+    backdrop-filter: blur(2px);        /* טשטוש אלגנטי */
+    z-index: -1;
+}
+
+/* לוגו וכותרת */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.35);
+    border-bottom: 3px solid #ffd700;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border-radius: 0 0 12px 12px;
+}
+
+.logo {
+    width: 225px;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 0 10px rgba(255,215,0,0.4));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    color: #ffd700;
+    font-size: 2.4em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+header p {
+    color: #e6e6e6;
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* קטעים כלליים */
+section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px 25px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#intro {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+#intro .intro-bubble {
+    display: block;
+    width: min(100%, 1180px);
+    margin: 15px auto 0;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #ffdd6b 0%, #d4af37 45%, #b88505 100%);
+    color: #4b0082;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* כותרות */
+h2 {
+    color: #ffd700;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #ffd700, #ffffff);
+    border-radius: 2px;
+}
+
+/* יתרונות */
+#benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 10px 0 5px;
+}
+
+.benefit {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    padding: 24px 20px;
+    flex: 1 1 220px;
+    min-width: 200px;
+    max-width: 32%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,215,0,0.25);
+}
+
+.benefit h2 {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 14px 28px;
+    background: #d4af37;
+    background: linear-gradient(135deg, #ffdd6b 0%, #d4af37 45%, #b88505 100%);
+    color: #4b0082;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.benefit h2::after {
+    content: none;
+}
+
+.benefit .emoji {
+    display: inline-block;
+    margin: 0 4px;
+    font-size: 1.15em;
+    line-height: 1;
+    transform: translateY(1px);
+}
+
+.benefit .emoji.heart {
+    color: #800080;
+}
+
+.benefit p {
+    color: #e8dfd4;
+    line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+    .benefit {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+/* שירותים נפוצים */
+#services {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+    padding: 0 10px;
+}
+
+#services h2 {
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+#services ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    text-align: left;
+    max-width: 420px;
+}
+
+#services li {
+    background: rgba(255,255,255,0.15);
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+#services li:hover {
+    background: rgba(255,215,0,0.25);
+}
+
+/* גלריה */
+#gallery {
+    text-align: center;
+}
+
+.gallery-image {
+    width: 260px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255,215,0,0.3);
+}
+
+/* סרטון */
+#video {
+    display: flex;
+    justify-content: center;
+    padding: 0 10px 20px;
+}
+
+#video iframe {
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* טופס יצירת קשר */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(255,215,0,0.4);
+    outline: none;
+}
+
+#contact button {
+    background: linear-gradient(to right, #ffd700, #ffcc00);
+    color: #003366;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#contact button:hover {
+    background: linear-gradient(to right, #ffcc00, #ffd700);
+    transform: scale(1.05);
+}
+
+.trust-note {
+    text-align: center;
+    color: #e6e6e6;
+    margin-top: 10px;
+}
+
+/* הודעת הצלחה עם אנימציה */
+[data-fs-success] {
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    max-width: 900px;
+    margin: 15px auto 0;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ffdd6b 0%, #d4af37 45%, #b88505 100%);
+    color: #fcf5eb;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+[data-fs-success].show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* אנימציה לטשטוש הטופס לפני הסתרתו */
+.fs-fade-out {
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    opacity: 0 !important;
+    transform: translateY(-8px) !important;
+}
+
+/* פוטר */
+footer {
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffd700;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.95em;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* רספונסיבי לניידים */
+@media (max-width: 768px) {
+
+    header {
+        padding: 30px 10px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    section {
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    #benefits {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .gallery-image {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    #video iframe {
+        width: 100%;
+        height: 220px;
+    }
+
+    #contact button {
+        font-size: 1em;
+        padding: 12px;
+    }
+}
+
+/* רספונסיבי למסכים קטנים מאוד */
+@media (max-width: 480px) {
+
+    .logo {
+        width: 150px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .gallery-image {
+        width: 100%;
+    }
+
+    #video iframe {
+        height: 180px;
+    }
+}
+

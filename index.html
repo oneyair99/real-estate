@@ -1,116 +1,137 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
+<<!DOCTYPE html>
+<html lang="he">
 <head>
-    <!-- הגדרת הקידוד של המסמך ל-UTF-8 כדי לתמוך בעברית ובהצגה תקינה -->
     <meta charset="UTF-8">
-    <!-- אופטימיזציה למנועי חיפוש ומכשירים ניידים -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- תגית Title: זהו הכותרת שמופיעה בלשונית הדפדפן -->
-    <title>מערכת מציאת נכסים למשקיעים - InvestProp Finder</title>
-
-    <!-- CSS Styling (סטיילינג) -->
-    <style>
-        /* איפוס סגנונות בסיסיים לקובץ */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f9; /* רקע בהיר ונעים לעין */
-            color: #333;
-        }
-
-        header {
-            background-color: #1e3a8a; /* כחול כהה - צבע מקצועי */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* סגנון עבור אזור התוכן הראשי */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* סגנון כותרות המשנה והפסקאות */
-        h2 {
-            color: #1e3a8a;
-            border-bottom: 2px solid #d1d5db;
-            padding-bottom: 10px;
-        }
-        
-        /* סגנון עבור כפתורים או אזורי קלט */
-        .button {
-            display: inline-block;
-            background-color: #3b82f6; /* כחול בהיר יותר */
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-
-        /* אפקט מעבר קל במעבר העכבר */
-        .button:hover {
-            background-color: #2563eb;
-            cursor: pointer;
-        }
-    </style>
+    <title>פתרון תפעולי לעסקים - המשקם רמת גן</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- כותרת האתר (Header) -->
+    <!-- לוגו -->
     <header>
-        <h1>🏡 InvestProp Finder - מציאת נכסי השקעה</h1>
-        <p>הכלים המקיפים למצאירי עסקאות בניתוח שוק הנדל"ן.</p>
+        <img src="images/logo.jpg" alt="לוגו המשקם רמת גן" class="logo">
+        <h1>פתרון תפעולי לעסקים</h1>
     </header>
 
-    <!-- אזור התוכן העיקרי של הדף -->
-    <div class="container">
-        
-        <h2>🔍 הקליטראיות והחיפוש</h2>
-        <p>הזן פרמטרים מוגדרים כדי לצמצם את החיפושים לאזור הגיאוגרפי המבוקש ולטווח מחירים הרצוי.</p>
-        
-        <!-- דמוניסטרציה של קופסת חיפוש (Form) -->
-        <form action="/search" method="GET">
-            <label for="location">מיקום:</label>
-            <input type="text" id="location" name="location" placeholder="עיר, מדינה או מיקוד..." required style="padding: 8px; margin-left: 10px;">
+    <!-- משפט מכירתי נוסף -->
+    <section id="intro">
+        <p class="intro-bubble">אנחנו לוקחים עלינו את כל העבודות שחוזרות על עצמן ומעמיסות עליכם כדי שתוכלו להתמקד במה שחשוב באמת.</p>
+    </section>
 
-            <label for="minPrice">טווח מחירים (מינימום):</label>
-             <!-- קלט עם ערך ברירת מחדל -->
-            <input type="number" id="minPrice" name="min_price" placeholder="₪50,000" style="padding: 8px;">
+    <!-- יתרונות -->
+    <section id="benefits">
+        <div class="benefit">
+            <h2>מחיר נגיש</h2>
+            <p>פתרון תפעולי מקצועי במחירים מדהימים שמתאימים לכל עסק!</p>
+        </div>
 
-            <!-- כפתור שליחה -->
-            <button type="submit" class="button">חפש נכסים</button>
+        <div class="benefit">
+            <h2>ערך חברתי</h2>
+            <p>העסק שלכם תורם לתעסוקה של אנשים עם מוגבלויות <span class="emoji">🤝</span><span class="emoji heart">💜</span></p>
+        </div>
+
+        <div class="benefit">
+            <h2>מקצועיות ואמינות</h2>
+            <p>צוות מיומן, עבודה אחידה ותוצאות מדויקות <span class="emoji">👥</span><span class="emoji">🛠️</span></p>
+        </div>
+    </section>
+
+    <!-- שירותים נפוצים -->
+    <section id="services">
+        <h2>שירותים נפוצים</h2>
+        <ul>
+            <li>מיון מוצרים</li>
+            <li>אריזה והכנת מארזים</li>
+            <li>הדבקת מדבקות על מוצרים מיובאים</li>
+            <li>עבודות בהתאמה אישית לפי הצורך המיוחד שלכם, נסו אותנו!</li>
+        </ul>
+    </section>
+
+    <!-- סרטון יוטיוב -->
+    <section id="video">
+        <iframe 
+            width="560" 
+            height="315"
+            src="https://www.youtube.com/embed/HSlAzDmWTDM?autoplay=1&mute=1"
+            title="סרטון המשקם"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <!-- טופס יצירת קשר -->
+    <section id="contact">
+        <h2>נשמח לקחת מכם את העומס השאירו פרטים ונחזור אליכם תוך יום עסקים אחד</h2>
+        <div data-fs-success style="display:none; margin-bottom:12px;">תודה רבה הישאר זמין!</div>
+        <div data-fs-error style="display:none; color:#ffd700; margin-bottom:12px;"></div>
+        <form id="contactForm" action="https://formspree.io/f/xnjkyozw" method="POST">
+            <input type="text" name="business" placeholder="שם העסק" required data-fs-field>
+            <input type="text" name="name" placeholder="שם מלא" required data-fs-field>
+            <input type="tel" name="phone" placeholder="טלפון" required data-fs-field>
+            <input type="email" name="email" placeholder="אימייל" required data-fs-field>
+            <textarea name="needs" placeholder="מה אתם צריכים?" rows="3" data-fs-field></textarea>
+            <button type="submit" data-fs-submit-btn>שליחה</button>
         </form>
+        <p class="trust-note">כל פנייה מטופלת בתוך יום עסקים אחד.</p>
+    </section>
 
-
-        <hr style="margin: 40px 0; border-color: #ccc;">
-
-        <h2>📈 מאפייני ההשקעה שלנו</h2>
-        <p>אנו מתמקדים בנכסים הדורשים שיפוץ, ומציעים רק אלה עם פוטנציאל גבוה ודירוג השקעה משופר.</p>
-        
-        <!-- פסקה מודגשת - תיאור המותג -->
-        <div style="background-color: #e0f2fe; padding: 20px; border-radius: 8px; margin-top: 20px;">
-            <strong>מדוע להשתמש בנו?</strong> אנחנו מסננים עבורך את הרעש בשוק, ומציגים רק נכסים עם הערכת שווי מקצועית ואחוז פוטנציאל משקלי ברור.
-        </div>
-
-        <h2>📜 תיאור מפורט של הקונספט</h2>
-        <p>האתר נועד לסייע למשקיעי נדל"ן המחפשים יתרון על ידי התמקדות במקרים שבהם הנכסים נמצאים מתחת למחירי השוק, אך עדיין מחזיקים בשווי פוטנציאלי גבוה לאחר הקלות הנדרשות. זהו גשר בין המציאה לבין ההשקעה המבוססת.</p>
-
-    </div> <!-- סוף .container -->
-
-
-    <!-- קטע התחתית (Footer) - פרטי יצירה וקשרים -->
+    <!-- פוטר -->
     <footer>
-        <div class="container" style="text-align: center; padding: 20px; border-top: 1px solid #ccc; margin-top: 40px;">
-            &copy; 2024 InvestProp Finder. כל הזכויות שמורות. | <a href="#" style="color: #3b82f6;">צור קשר</a>
-        </div>
+        <p>הסניף המקומי של המשקם — חלק מרשת ארצית אמינה ומוכרת.</p>
+        <a href="https://www.hameshakem.co.il/" target="_blank">מידע נוסף באתר הארצי</a>
     </footer>
 
+        <script>
+            window.formspree = window.formspree || function(){ (formspree.q = formspree.q || []).push(arguments); };
+            formspree('initForm', { formElement: '#contactForm', formId: 'xnjkyozw' });
+        </script>
+                <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const form = document.getElementById('contactForm');
+                        if (!form) return;
+                        const successDiv = document.querySelector('[data-fs-success]');
+                        const errorDiv = document.querySelector('[data-fs-error]');
+                        const submitBtn = form.querySelector('[data-fs-submit-btn]');
+
+                        form.addEventListener('submit', function (e) {
+                            e.preventDefault();
+                            if (submitBtn) submitBtn.disabled = true;
+                            if (errorDiv) { errorDiv.style.display = 'none'; errorDiv.textContent = ''; }
+
+                            const action = form.getAttribute('action');
+                            const formData = new FormData(form);
+
+                            fetch(action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+                                .then(function (response) {
+                                    if (response.ok) return response.json().catch(function () { return {}; });
+                                    return response.json().then(function (data) { throw data; });
+                                })
+                                    .then(function () {
+                                        // animate form fade-out, then show success message
+                                        if (form) {
+                                            form.classList.add('fs-fade-out');
+                                            setTimeout(function () { form.style.display = 'none'; }, 480);
+                                        }
+                                        if (successDiv) {
+                                            successDiv.style.display = 'block';
+                                            // trigger CSS animation
+                                            setTimeout(function () { successDiv.classList.add('show'); }, 20);
+                                        }
+                                    })
+                                .catch(function (err) {
+                                    if (submitBtn) submitBtn.disabled = false;
+                                    let msg = 'אירעה שגיאה בשליחת הטופס.';
+                                    if (err && err.errors) msg = err.errors.map(function (e) { return e.message; }).join(', ');
+                                    if (errorDiv) { errorDiv.textContent = msg; errorDiv.style.display = 'block'; }
+                                });
+                        });
+                    });
+                </script>
+                <script src="script.js"></script>
 </body>
 </html>
+
+
