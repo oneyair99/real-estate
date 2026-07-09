@@ -1,137 +1,20 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פתרון תפעולי לעסקים - המשקם רמת גן</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=./MESHAKEM/MESHKEM.HTML" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meshakem Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f7f7f7; color:#222; display:grid; place-items:center; min-height:100vh; margin:0; }
+    .box { text-align:center; padding:24px; background:white; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+    a { color:#0a66c2; font-weight:bold; }
+  </style>
 </head>
 <body>
-
-    <!-- לוגו -->
-    <header>
-        <img src="images/logo.jpg" alt="לוגו המשקם רמת גן" class="logo">
-        <h1>פתרון תפעולי לעסקים</h1>
-    </header>
-
-    <!-- משפט מכירתי נוסף -->
-    <section id="intro">
-        <p class="intro-bubble">אנחנו לוקחים עלינו את כל העבודות שחוזרות על עצמן ומעמיסות עליכם כדי שתוכלו להתמקד במה שחשוב באמת.</p>
-    </section>
-
-    <!-- יתרונות -->
-    <section id="benefits">
-        <div class="benefit">
-            <h2>מחיר נגיש</h2>
-            <p>פתרון תפעולי מקצועי במחירים מדהימים שמתאימים לכל עסק!</p>
-        </div>
-
-        <div class="benefit">
-            <h2>ערך חברתי</h2>
-            <p>העסק שלכם תורם לתעסוקה של אנשים עם מוגבלויות <span class="emoji">🤝</span><span class="emoji heart">💜</span></p>
-        </div>
-
-        <div class="benefit">
-            <h2>מקצועיות ואמינות</h2>
-            <p>צוות מיומן, עבודה אחידה ותוצאות מדויקות <span class="emoji">👥</span><span class="emoji">🛠️</span></p>
-        </div>
-    </section>
-
-    <!-- שירותים נפוצים -->
-    <section id="services">
-        <h2>שירותים נפוצים</h2>
-        <ul>
-            <li>מיון מוצרים</li>
-            <li>אריזה והכנת מארזים</li>
-            <li>הדבקת מדבקות על מוצרים מיובאים</li>
-            <li>עבודות בהתאמה אישית לפי הצורך המיוחד שלכם, נסו אותנו!</li>
-        </ul>
-    </section>
-
-    <!-- סרטון יוטיוב -->
-    <section id="video">
-        <iframe 
-            width="560" 
-            height="315"
-            src="https://www.youtube.com/embed/HSlAzDmWTDM?autoplay=1&mute=1"
-            title="סרטון המשקם"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </section>
-
-    <!-- טופס יצירת קשר -->
-    <section id="contact">
-        <h2>נשמח לקחת מכם את העומס השאירו פרטים ונחזור אליכם תוך יום עסקים אחד</h2>
-        <div data-fs-success style="display:none; margin-bottom:12px;">תודה רבה הישאר זמין!</div>
-        <div data-fs-error style="display:none; color:#ffd700; margin-bottom:12px;"></div>
-        <form id="contactForm" action="https://formspree.io/f/xnjkyozw" method="POST">
-            <input type="text" name="business" placeholder="שם העסק" required data-fs-field>
-            <input type="text" name="name" placeholder="שם מלא" required data-fs-field>
-            <input type="tel" name="phone" placeholder="טלפון" required data-fs-field>
-            <input type="email" name="email" placeholder="אימייל" required data-fs-field>
-            <textarea name="needs" placeholder="מה אתם צריכים?" rows="3" data-fs-field></textarea>
-            <button type="submit" data-fs-submit-btn>שליחה</button>
-        </form>
-        <p class="trust-note">כל פנייה מטופלת בתוך יום עסקים אחד.</p>
-    </section>
-
-    <!-- פוטר -->
-    <footer>
-        <p>הסניף המקומי של המשקם — חלק מרשת ארצית אמינה ומוכרת.</p>
-        <a href="https://www.hameshakem.co.il/" target="_blank">מידע נוסף באתר הארצי</a>
-    </footer>
-
-        <script>
-            window.formspree = window.formspree || function(){ (formspree.q = formspree.q || []).push(arguments); };
-            formspree('initForm', { formElement: '#contactForm', formId: 'xnjkyozw' });
-        </script>
-                <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const form = document.getElementById('contactForm');
-                        if (!form) return;
-                        const successDiv = document.querySelector('[data-fs-success]');
-                        const errorDiv = document.querySelector('[data-fs-error]');
-                        const submitBtn = form.querySelector('[data-fs-submit-btn]');
-
-                        form.addEventListener('submit', function (e) {
-                            e.preventDefault();
-                            if (submitBtn) submitBtn.disabled = true;
-                            if (errorDiv) { errorDiv.style.display = 'none'; errorDiv.textContent = ''; }
-
-                            const action = form.getAttribute('action');
-                            const formData = new FormData(form);
-
-                            fetch(action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-                                .then(function (response) {
-                                    if (response.ok) return response.json().catch(function () { return {}; });
-                                    return response.json().then(function (data) { throw data; });
-                                })
-                                    .then(function () {
-                                        // animate form fade-out, then show success message
-                                        if (form) {
-                                            form.classList.add('fs-fade-out');
-                                            setTimeout(function () { form.style.display = 'none'; }, 480);
-                                        }
-                                        if (successDiv) {
-                                            successDiv.style.display = 'block';
-                                            // trigger CSS animation
-                                            setTimeout(function () { successDiv.classList.add('show'); }, 20);
-                                        }
-                                    })
-                                .catch(function (err) {
-                                    if (submitBtn) submitBtn.disabled = false;
-                                    let msg = 'אירעה שגיאה בשליחת הטופס.';
-                                    if (err && err.errors) msg = err.errors.map(function (e) { return e.message; }).join(', ');
-                                    if (errorDiv) { errorDiv.textContent = msg; errorDiv.style.display = 'block'; }
-                                });
-                        });
-                    });
-                </script>
-                <script src="script.js"></script>
+  <div class="box">
+    <h1>האתר נטען...</h1>
+    <p>אם הדף לא נפתח אוטומטית, <a href="./MESHAKEM/MESHKEM.HTML">לחץ כאן</a>.</p>
+  </div>
 </body>
 </html>
-
-
